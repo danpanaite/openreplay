@@ -14,7 +14,7 @@ const app = express();
 app.use(request_logger("[SR]"));
 app.get(['/', PREFIX, `${PREFIX}/`, `${PREFIX}/${P_KEY}`, `${PREFIX}/${P_KEY}/`], (req, res) => {
         res.statusCode = 200;
-        res.end("ok!");
+        res.end(`${PREFIX}/${P_KEY}/sourcemaps`);
     }
 );
 app.use(`${PREFIX}/${P_KEY}/sourcemaps`, sourcemapsReaderServer);
